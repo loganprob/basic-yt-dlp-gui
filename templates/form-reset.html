@@ -1,0 +1,30 @@
+<form hx-get="/get-video">
+
+    <div id="thumbnail-preview" class="thumbnail" hx-get="/get-thumbnail" hx-trigger="input changed from:#video-url"
+        hx-include="#video-url">
+        <div>
+            <p>No Preview</p>
+        </div>
+    </div>
+
+    <label for="video-url">Youtube Video URL:</label>
+    <input type="text" name="video-url" id="video-url" value="value" required>
+
+    <fieldset>
+        <legend>Output as:</legend>
+        <div>
+            <input type="radio" name="output-preset" id="preset-mp3" value="mp3" checked>
+            <label for="preset-mp3">MP3 (Audio)</label>
+        </div>
+        <div>
+            <input type="radio" name="output-preset" id="preset-mp4" value="mp4">
+            <label for="preset-mp4">MP4 (Audio + Video)</label>
+        </div>
+    </fieldset>
+
+    <label for="rename-file">Rename File (Optional):</label>
+    <input type="text" name="rename-file" id="rename-file">
+
+    <input type="submit" value="Download">
+
+</form>

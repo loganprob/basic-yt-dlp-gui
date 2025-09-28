@@ -1,0 +1,19 @@
+<!doctype html>
+
+<head>
+    <title>Basic YT-DLP GUI</title>
+    <meta charset="utf-8" />
+    <script src="/static/htmx.min.js"></script>
+    <link rel="stylesheet" href="/static/styles.css" />
+
+    <!-- <script>htmx.logAll();</script> -->
+
+</head>
+
+<body hx-trigger="reset-form from:form" hx-get="/reset-form" hx-target="form">
+    <h1>Basic YT-DPL GUI</h1>
+    <span id="error-alert" hx-trigger="form-errors from:form" hx-on::trigger="alert('Invalid video URL!');"></span>
+
+    {% include 'form-reset.html' %}
+
+</body>

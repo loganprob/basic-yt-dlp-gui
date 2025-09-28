@@ -1,0 +1,9 @@
+services:
+  flask-app:
+    build: .
+    container_name: flask_local_app
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./downloads:/app/downloads
+    restart: unless-stopped
